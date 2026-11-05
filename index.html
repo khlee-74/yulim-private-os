@@ -38,7 +38,14 @@ h2{font-size:clamp(29px,4vw,44px);line-height:1.2;letter-spacing:-.04em;margin:1
 .principle{padding:21px;border-radius:13px;background:white;border:1px solid var(--line)}.principle strong{display:block;color:var(--navy);margin:0 0 7px}.principle span{font-size:13px;color:var(--muted)}
 .products{background:#fff}.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:35px}
 .product{border:1px solid var(--line);border-radius:14px;padding:22px;position:relative;overflow:hidden}.product:before{content:"";position:absolute;left:0;top:0;width:4px;height:100%;background:linear-gradient(var(--navy),var(--blue))}
-.product h3{margin:0 0 7px;color:var(--navy);font-size:17px}.product p{margin:0;color:var(--muted);font-size:13px}.status{display:inline-block;margin-top:15px;font-size:10px;font-weight:850;letter-spacing:.08em;color:#45627f;background:#edf3f9;padding:5px 8px;border-radius:20px}
+.product h3{margin:0 0 7px;color:var(--navy);font-size:17px}.product p{margin:0;color:var(--muted);font-size:13px}
+.concept-toggle{display:inline-flex;align-items:center;gap:7px;margin-top:15px;border:1px solid #d7e3ef;border-radius:20px;padding:6px 11px;background:#edf3f9;color:#45627f;font-size:10px;font-weight:850;letter-spacing:.08em;cursor:pointer;transition:.2s}
+.concept-toggle:hover,.concept-toggle[aria-expanded="true"]{background:#e0efff;border-color:#8db9e2;color:#174f80}
+.concept-toggle .chevron{font-size:12px;transition:transform .2s}
+.concept-toggle[aria-expanded="true"] .chevron{transform:rotate(180deg)}
+.concept-detail{display:none;margin-top:13px;padding:13px 14px;background:#f5f8fc;border-radius:10px;border:1px solid #e3ebf4;color:#52657c;font-size:12px;line-height:1.65}
+.concept-detail.open{display:block}
+.concept-detail strong{display:block;color:var(--navy);font-size:12px;margin-bottom:4px}
 .builder{background:linear-gradient(135deg,#0e2747,#123d6a);color:white}.builder h2{color:white}.builder .lead{color:#c4d6e8}
 .builder-box{margin-top:35px;background:white;color:var(--ink);border-radius:18px;padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:30px}
 .field-title{font-size:13px;font-weight:850;color:var(--navy);margin-bottom:12px}
@@ -112,12 +119,36 @@ footer{background:#0a1c33;color:#aebed0;padding:35px 0;font-size:12px}.foot{disp
    <div class="section-tag">04 / PRODUCT ECOSYSTEM</div><h2>하나의 철학, 다양한 전문 도구</h2>
    <p class="lead">공통 기반 위에 기업과 개인에게 필요한 기능을 조합합니다. 아래 제품군은 YULIM이 검토하는 방향과 개발 아이디어를 나타냅니다.</p>
    <div class="product-grid">
-    <article class="product"><h3>YULIM Office OS</h3><p>사무·문서·일상 업무관리</p><span class="status">CONCEPT</span></article>
-    <article class="product"><h3>YULIM Sales OS</h3><p>영업·고객·거래처 관리</p><span class="status">CONCEPT</span></article>
-    <article class="product"><h3>YULIM Project OS</h3><p>프로젝트·일정·실적 관리</p><span class="status">CONCEPT</span></article>
-    <article class="product"><h3>YULIM HR OS</h3><p>인사·근태·조직관리</p><span class="status">CONCEPT</span></article>
-    <article class="product"><h3>YULIM Finance OS</h3><p>자금·매출·지출관리</p><span class="status">CONCEPT</span></article>
-    <article class="product"><h3>YULIM Security OS</h3><p>계정·권한·보안 점검</p><span class="status">CONCEPT</span></article>
+    <article class="product">
+     <h3>YULIM Office OS</h3><p>사무·문서·일상 업무관리</p>
+     <button class="concept-toggle" type="button" aria-expanded="false" aria-controls="concept-office">CONCEPT <span class="chevron">⌄</span></button>
+     <div class="concept-detail" id="concept-office"><strong>매일 반복되는 사무 업무를 한곳에서.</strong>공지, 할 일, 회의 메모, 문서 양식과 업무 진행 상황을 간단하게 관리하는 사내 업무 공간입니다. 복잡한 그룹웨어가 부담스러운 소규모 조직을 위한 구성을 지향합니다.</div>
+    </article>
+    <article class="product">
+     <h3>YULIM Sales OS</h3><p>영업·고객·거래처 관리</p>
+     <button class="concept-toggle" type="button" aria-expanded="false" aria-controls="concept-sales">CONCEPT <span class="chevron">⌄</span></button>
+     <div class="concept-detail" id="concept-sales"><strong>고객과 영업 기회를 놓치지 않도록.</strong>거래처 정보, 담당자, 상담 기록, 견적·제안 진행 상태와 후속 연락 일정을 관리합니다. 영업 담당자 개인의 기억이나 흩어진 엑셀에 의존하는 업무를 줄이는 것이 목표입니다.</div>
+    </article>
+    <article class="product">
+     <h3>YULIM Project OS</h3><p>프로젝트·일정·실적 관리</p>
+     <button class="concept-toggle" type="button" aria-expanded="false" aria-controls="concept-project">CONCEPT <span class="chevron">⌄</span></button>
+     <div class="concept-detail" id="concept-project"><strong>일정, 담당자, 결과물을 한눈에.</strong>프로젝트별 단계와 주요 일정, 담당자, 할 일, 이슈, 산출물 및 진행률을 정리합니다. 대표와 실무자가 현재 상황과 지연 위험을 빠르게 파악하도록 돕는 도구입니다.</div>
+    </article>
+    <article class="product">
+     <h3>YULIM HR OS</h3><p>인사·근태·조직관리</p>
+     <button class="concept-toggle" type="button" aria-expanded="false" aria-controls="concept-hr">CONCEPT <span class="chevron">⌄</span></button>
+     <div class="concept-detail" id="concept-hr"><strong>작은 조직에 필요한 인사 정보를 단정하게.</strong>직원 기본정보, 조직과 역할, 휴가·근태 기록, 교육 및 인사 관련 문서를 관리합니다. 민감한 인사정보인 만큼 사용자별 접근권한과 기록 보호를 우선 설계하는 제품 구상입니다.</div>
+    </article>
+    <article class="product">
+     <h3>YULIM Finance OS</h3><p>자금·매출·지출관리</p>
+     <button class="concept-toggle" type="button" aria-expanded="false" aria-controls="concept-finance">CONCEPT <span class="chevron">⌄</span></button>
+     <div class="concept-detail" id="concept-finance"><strong>회사의 돈 흐름을 쉽게 파악하도록.</strong>예정된 수입과 지출, 거래 내역, 미수·미지급 항목, 월별 자금 계획을 정리합니다. 회계·세무 시스템을 대체하기보다 대표가 경영 현황을 빠르게 살피는 보조 관리 도구를 지향합니다.</div>
+    </article>
+    <article class="product">
+     <h3>YULIM Security OS</h3><p>계정·권한·보안 점검</p>
+     <button class="concept-toggle" type="button" aria-expanded="false" aria-controls="concept-security">CONCEPT <span class="chevron">⌄</span></button>
+     <div class="concept-detail" id="concept-security"><strong>작은 회사도 기본 보안을 놓치지 않도록.</strong>계정과 권한 현황, 정기 점검 항목, 백업 확인, 업데이트 및 보안 조치 이력을 관리합니다. 침입을 자동 차단하는 보안 제품이 아니라 보안 관리의 누락을 줄이는 운영 도구로 구상합니다.</div>
+    </article>
    </div>
   </div>
  </section>
@@ -157,6 +188,7 @@ footer{background:#0a1c33;color:#aebed0;padding:35px 0;font-size:12px}.foot{disp
 <footer><div class="wrap foot"><div><strong>YULIM INFOTECH</strong><div>고객의 성공을 함께 만드는 파트너</div></div><div>YULIM PRIVATE OS · Your Data. Your System. Your Control.</div><div>© <span id="year"></span> YULIM INFOTECH. All rights reserved.</div></div></footer>
 <script>
 document.getElementById('year').textContent=new Date().getFullYear();
+document.querySelectorAll('.concept-toggle').forEach(button=>{button.addEventListener('click',()=>{const panel=document.getElementById(button.getAttribute('aria-controls'));const opening=button.getAttribute('aria-expanded')!=='true';button.setAttribute('aria-expanded',String(opening));panel.classList.toggle('open',opening);});});
 function setupGroup(id,single){const root=document.getElementById(id);root.addEventListener('click',e=>{const b=e.target.closest('button.choice');if(!b)return;if(single){root.querySelectorAll('.choice').forEach(x=>x.classList.remove('active'));b.classList.add('active')}else b.classList.toggle('active');update()})}
 setupGroup('audience',true);setupGroup('storage',true);setupGroup('features',false);
 function selected(id){return [...document.querySelectorAll('#'+id+' .choice.active')].map(x=>x.dataset.value)}
