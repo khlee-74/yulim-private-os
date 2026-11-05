@@ -13,8 +13,6 @@ a{color:inherit;text-decoration:none}.wrap{width:min(1160px,calc(100% - 40px));m
 header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(220,229,239,.8)}
 .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
 .brand{display:flex;align-items:center;gap:12px;font-weight:850;letter-spacing:.04em;color:var(--navy)}
-.brandmark{width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,var(--navy),var(--blue));display:grid;place-items:center;color:white;font-size:15px;font-weight:900}
-.brand small{display:block;font-size:9px;letter-spacing:.18em;color:#8291a5;font-weight:700;margin-top:-3px}
 nav{display:flex;gap:25px;font-size:13px;font-weight:700;color:#53647a}nav a:hover{color:var(--blue)}
 .menu{display:none;border:1px solid var(--line);background:white;border-radius:9px;padding:8px 11px}
 .hero{background:radial-gradient(circle at 80% 20%,rgba(55,142,205,.28),transparent 34%),linear-gradient(125deg,#0b203c,#123b68 58%,#1765a0);color:white;overflow:hidden;position:relative}
@@ -57,7 +55,7 @@ footer{background:#0a1c33;color:#aebed0;padding:35px 0;font-size:12px}.foot{disp
 <body>
 <header>
  <div class="wrap nav" id="nav">
-  <a class="brand" href="#top"><span class="brandmark">Y</span><span>YULIM INFOTECH<small>PRIVATE OS INITIATIVE</small></span></a>
+  <a class="brand" href="#top" aria-label="YULIM INFOTECH 홈"><img src="yulim_logo.png" alt="YULIM INFOTECH CO., LTD." style="display:block;width:190px;max-width:48vw;height:auto"></a>
   <nav>
    <a href="#philosophy">철학</a><a href="#problem">문제와 해결</a><a href="#principles">개발 원칙</a><a href="#products">제품 생태계</a><a href="#builder">맞춤 설계</a><a href="#join">참여하기</a>
   </nav>

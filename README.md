@@ -3,7 +3,7 @@
 정적 웹사이트 형태의 아이디어 소개 페이지입니다.
 
 ## 구성
-- `index.html`: 전체 페이지 (HTML/CSS/JavaScript 포함)
+- `index.html`: 전체 페이지 (HTML/CSS/JavaScript 포함)\n- `yulim_logo.png`: YULIM 공식 로고
 - 외부 라이브러리, 서버, AI API, 빌드 과정 없이 동작합니다.
 - 맞춤 설계 체험의 선택 내용은 브라우저 안에서 처리되며 외부로 전송되지 않습니다.
 
