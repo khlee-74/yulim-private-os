@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#102b50">
+<meta name="description" content="YULIM PRIVATE OS — 기업과 개인을 위한 독립형 디지털 소프트웨어 생태계">
+<title>YULIM PRIVATE OS | Your Data. Your System. Your Control.</title>
+<style>
+:root{--navy:#102b50;--blue:#1765a0;--ink:#15243a;--muted:#62738a;--line:#dce5ef;--bg:#f5f8fc;--white:#fff;--mint:#dff5ef}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;color:var(--ink);background:#fff;line-height:1.65}
+a{color:inherit;text-decoration:none}.wrap{width:min(1160px,calc(100% - 40px));margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(220,229,239,.8)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:850;letter-spacing:.04em;color:var(--navy)}
+.brandmark{width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,var(--navy),var(--blue));display:grid;place-items:center;color:white;font-size:15px;font-weight:900}
+.brand small{display:block;font-size:9px;letter-spacing:.18em;color:#8291a5;font-weight:700;margin-top:-3px}
+nav{display:flex;gap:25px;font-size:13px;font-weight:700;color:#53647a}nav a:hover{color:var(--blue)}
+.menu{display:none;border:1px solid var(--line);background:white;border-radius:9px;padding:8px 11px}
+.hero{background:radial-gradient(circle at 80% 20%,rgba(55,142,205,.28),transparent 34%),linear-gradient(125deg,#0b203c,#123b68 58%,#1765a0);color:white;overflow:hidden;position:relative}
+.hero:after{content:"";position:absolute;width:520px;height:520px;border:1px solid rgba(255,255,255,.12);border-radius:50%;right:-120px;top:-180px;box-shadow:0 0 0 55px rgba(255,255,255,.025),0 0 0 110px rgba(255,255,255,.02)}
+.hero-inner{position:relative;z-index:1;padding:112px 0 106px;max-width:790px}
+.eyebrow{font-size:11px;letter-spacing:.22em;font-weight:800;color:#9bd5ff}
+h1{font-size:clamp(42px,7vw,76px);line-height:1.04;letter-spacing:-.055em;margin:20px 0}
+.hero p{font-size:clamp(16px,2vw,20px);color:#d7e5f4;max-width:660px;margin:0 0 30px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:9px;font-weight:800;font-size:14px;border:1px solid transparent;cursor:pointer;transition:.2s}
+.btn-primary{background:white;color:var(--navy)}.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 25px #06182c55}
+.btn-ghost{border-color:#ffffff66;color:white}.btn-ghost:hover{background:#ffffff16}
+.hero-note{margin-top:42px;color:#b6cce1;font-size:12px;letter-spacing:.04em}
+section{padding:88px 0}.section-tag{font-size:11px;letter-spacing:.18em;font-weight:900;color:var(--blue);text-transform:uppercase}
+h2{font-size:clamp(29px,4vw,44px);line-height:1.2;letter-spacing:-.04em;margin:12px 0 18px;color:var(--navy)}
+.lead{font-size:17px;color:var(--muted);max-width:760px;margin:0}
+.philosophy{background:var(--bg)}.quote{margin-top:34px;padding:28px 30px;border-left:4px solid var(--blue);background:white;border-radius:0 14px 14px 0;font-size:clamp(19px,2.5vw,25px);font-weight:750;color:var(--navy);box-shadow:0 10px 35px #18385c0b}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:38px}
+.card{border:1px solid var(--line);border-radius:15px;padding:25px;background:white;min-height:205px}
+.card .num{font-size:12px;color:var(--blue);font-weight:900;letter-spacing:.1em}.card h3{margin:12px 0 8px;color:var(--navy);font-size:19px}.card p{margin:0;color:var(--muted);font-size:14px}
+.problem{background:#fff}.split{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:start}
+.checks{display:grid;gap:13px;margin-top:25px}.check{display:flex;gap:12px;align-items:flex-start;color:#42536a;font-size:15px}.check b{color:var(--blue);font-size:18px;line-height:1.3}
+.principles{background:var(--bg)}.principle-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:35px}
+.principle{padding:21px;border-radius:13px;background:white;border:1px solid var(--line)}.principle strong{display:block;color:var(--navy);margin:0 0 7px}.principle span{font-size:13px;color:var(--muted)}
+.products{background:#fff}.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:35px}
+.product{border:1px solid var(--line);border-radius:14px;padding:22px;position:relative;overflow:hidden}.product:before{content:"";position:absolute;left:0;top:0;width:4px;height:100%;background:linear-gradient(var(--navy),var(--blue))}
+.product h3{margin:0 0 7px;color:var(--navy);font-size:17px}.product p{margin:0;color:var(--muted);font-size:13px}.status{display:inline-block;margin-top:15px;font-size:10px;font-weight:850;letter-spacing:.08em;color:#45627f;background:#edf3f9;padding:5px 8px;border-radius:20px}
+.builder{background:linear-gradient(135deg,#0e2747,#123d6a);color:white}.builder h2{color:white}.builder .lead{color:#c4d6e8}
+.builder-box{margin-top:35px;background:white;color:var(--ink);border-radius:18px;padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.field-title{font-size:13px;font-weight:850;color:var(--navy);margin-bottom:12px}
+.options{display:flex;gap:9px;flex-wrap:wrap}.choice{border:1px solid var(--line);border-radius:9px;padding:9px 12px;font-size:13px;cursor:pointer;color:#53647a;background:#fff}.choice.active{border-color:var(--blue);background:#edf6ff;color:var(--navy);font-weight:800}
+.result{background:#f2f6fb;border-radius:12px;padding:22px;align-self:stretch}.result h3{margin:0 0 8px;color:var(--navy)}.result p{font-size:13px;color:var(--muted);margin:0 0 14px}.result ul{padding-left:19px;margin:0;color:#42536a;font-size:13px}
+.btn-blue{background:var(--blue);color:white;margin-top:18px}.btn-blue:hover{background:var(--navy)}
+.join{background:var(--bg)}.joinbox{border-radius:18px;background:white;border:1px solid var(--line);padding:35px;display:flex;align-items:center;justify-content:space-between;gap:25px;margin-top:30px}.joinbox p{margin:5px 0 0;color:var(--muted);font-size:14px}
+footer{background:#0a1c33;color:#aebed0;padding:35px 0;font-size:12px}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.foot strong{color:white;letter-spacing:.08em}
+.note{font-size:12px;color:#8b9aab;margin-top:18px}
+@media(max-width:800px){nav{display:none;position:absolute;top:76px;left:0;right:0;background:white;padding:18px 22px;border-bottom:1px solid var(--line);flex-direction:column;gap:14px}.nav.open nav{display:flex}.menu{display:block}.grid{grid-template-columns:1fr}.split{grid-template-columns:1fr;gap:25px}.principle-grid{grid-template-columns:repeat(2,1fr)}.product-grid{grid-template-columns:1fr 1fr}.builder-box{grid-template-columns:1fr}.hero-inner{padding:85px 0}.joinbox{align-items:flex-start;flex-direction:column}}
+@media(max-width:520px){.wrap{width:min(100% - 30px,1160px)}section{padding:65px 0}.principle-grid,.product-grid{grid-template-columns:1fr}.hero-inner{padding:75px 0}.quote{padding:22px}.builder-box{padding:20px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap nav" id="nav">
+  <a class="brand" href="#top"><span class="brandmark">Y</span><span>YULIM INFOTECH<small>PRIVATE OS INITIATIVE</small></span></a>
+  <nav>
+   <a href="#philosophy">철학</a><a href="#problem">문제와 해결</a><a href="#principles">개발 원칙</a><a href="#products">제품 생태계</a><a href="#builder">맞춤 설계</a><a href="#join">참여하기</a>
+  </nav>
+  <button class="menu" aria-label="메뉴 열기" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+ </div>
+</header>
+<main id="top">
+ <section class="hero">
+  <div class="wrap hero-inner">
+   <div class="eyebrow">A NEW SOFTWARE PHILOSOPHY BY YULIM INFOTECH</div>
+   <h1>YULIM<br>PRIVATE OS</h1>
+   <p>기업과 개인이 자신의 데이터와 업무 방식을 스스로 통제할 수 있도록. 필요한 기능만, 안전하게, 독립적으로 사용하는 새로운 소프트웨어를 제안합니다.</p>
+   <div class="actions"><a class="btn btn-primary" href="#philosophy">우리의 철학 알아보기 ↗</a><a class="btn btn-ghost" href="#builder">나에게 필요한 앱 찾기</a></div>
+   <div class="hero-note">YOUR DATA. YOUR SYSTEM. YOUR CONTROL.</div>
+  </div>
+ </section>
+ <section class="philosophy" id="philosophy">
+  <div class="wrap">
+   <div class="section-tag">01 / OUR PHILOSOPHY</div>
+   <h2>기술은 사용자를<br>더 자유롭게 해야 합니다.</h2>
+   <p class="lead">모든 문제에 AI가 필요한 것은 아닙니다. 모든 데이터가 외부 서버에 있어야 하는 것도 아닙니다. 우리는 기술의 화려함보다 사용자의 실제 필요와 선택권을 먼저 생각합니다.</p>
+   <div class="quote">“소프트웨어는 사용자를 지배하기 위해 존재하는 것이 아닙니다. 사용자가 자신의 일과 삶을 더 자유롭게 통제할 수 있도록 돕기 위해 존재합니다.”</div>
+  </div>
+ </section>
+ <section class="problem" id="problem">
+  <div class="wrap split">
+   <div><div class="section-tag">02 / THE PROBLEM</div><h2>소프트웨어가<br>복잡해질수록 질문합니다.</h2><p class="lead">우리 회사에 정말 필요한 기능은 무엇일까요? 데이터는 어디에 저장되고, 누가 접근할 수 있을까요? 사용하지 않는 기능과 구독료까지 감당해야 할까요?</p></div>
+   <div class="checks">
+    <div class="check"><b>✓</b><span>매월 반복되는 구독료와 예상하기 어려운 운영비</span></div>
+    <div class="check"><b>✓</b><span>외부 서비스에 데이터를 맡기는 데서 오는 부담</span></div>
+    <div class="check"><b>✓</b><span>우리 회사 업무와 맞지 않는 복잡한 범용 기능</span></div>
+    <div class="check"><b>✓</b><span>인터넷 연결이나 서비스 정책 변화에 대한 의존성</span></div>
+   </div>
+  </div>
+ </section>
+ <section class="principles" id="principles">
+  <div class="wrap">
+   <div class="section-tag">03 / OUR SOLUTION</div><h2>우리가 지키려는 7가지 원칙</h2>
+   <p class="lead">AI를 배제하는 것이 목적이 아니라, AI가 없어도 완성도 있게 작동하는 기본기를 갖추는 것이 목적입니다.</p>
+   <div class="principle-grid">
+    <div class="principle"><strong>01. AI-Free by Default</strong><span>AI 연결 없이도 핵심 업무 수행</span></div>
+    <div class="principle"><strong>02. Data Ownership</strong><span>데이터의 소유권과 통제권은 사용자에게</span></div>
+    <div class="principle"><strong>03. Local-First</strong><span>기기 또는 사내 환경에 우선 저장</span></div>
+    <div class="principle"><strong>04. Offline Ready</strong><span>인터넷이 없어도 핵심 기능 사용</span></div>
+    <div class="principle"><strong>05. Privacy by Design</strong><span>최소 수집·최소 권한·안전한 저장</span></div>
+    <div class="principle"><strong>06. Simple Experience</strong><span>배우기 쉽고 직관적인 사용 경험</span></div>
+    <div class="principle"><strong>07. User Choice</strong><span>필요한 기능과 운영 방식을 직접 선택</span></div>
+   </div>
+   <p class="note">※ 로컬 저장이나 오프라인 작동만으로 완전한 보안이 보장되는 것은 아닙니다. 제품별로 암호화, 접근통제, 백업, 업데이트 등 적절한 보호조치를 설계합니다.</p>
+  </div>
+ </section>
+ <section class="products" id="products">
+  <div class="wrap">
+   <div class="section-tag">04 / PRODUCT ECOSYSTEM</div><h2>하나의 철학, 다양한 전문 도구</h2>
+   <p class="lead">공통 기반 위에 기업과 개인에게 필요한 기능을 조합합니다. 아래 제품군은 YULIM이 검토하는 방향과 개발 아이디어를 나타냅니다.</p>
+   <div class="product-grid">
+    <article class="product"><h3>YULIM Office OS</h3><p>사무·문서·일상 업무관리</p><span class="status">CONCEPT</span></article>
+    <article class="product"><h3>YULIM Sales OS</h3><p>영업·고객·거래처 관리</p><span class="status">CONCEPT</span></article>
+    <article class="product"><h3>YULIM Project OS</h3><p>프로젝트·일정·실적 관리</p><span class="status">CONCEPT</span></article>
+    <article class="product"><h3>YULIM HR OS</h3><p>인사·근태·조직관리</p><span class="status">CONCEPT</span></article>
+    <article class="product"><h3>YULIM Finance OS</h3><p>자금·매출·지출관리</p><span class="status">CONCEPT</span></article>
+    <article class="product"><h3>YULIM Security OS</h3><p>계정·권한·보안 점검</p><span class="status">CONCEPT</span></article>
+   </div>
+  </div>
+ </section>
+ <section class="builder" id="builder">
+  <div class="wrap">
+   <div class="section-tag" style="color:#9bd5ff">05 / DESIGN YOUR WORKSPACE</div><h2>당신에게 필요한 소프트웨어는?</h2>
+   <p class="lead">필요한 기능과 운영 환경을 선택해 보세요. 선택 내용은 이 브라우저 안에서만 처리되며 외부로 전송되지 않습니다.</p>
+   <div class="builder-box">
+    <div>
+     <div class="field-title">어떤 사용자이신가요?</div>
+     <div class="options" id="audience"><button class="choice active" data-value="중소기업">중소기업</button><button class="choice" data-value="1인 기업·프리랜서">1인 기업·프리랜서</button><button class="choice" data-value="개인 사용자">개인 사용자</button></div>
+     <div class="field-title" style="margin-top:25px">필요한 기능을 선택하세요.</div>
+     <div class="options" id="features">
+      <button class="choice active" data-value="업무관리">업무관리</button><button class="choice" data-value="고객관리">고객관리</button><button class="choice" data-value="영업관리">영업관리</button><button class="choice" data-value="재무관리">재무관리</button><button class="choice" data-value="일정관리">일정관리</button><button class="choice" data-value="프로젝트관리">프로젝트관리</button><button class="choice" data-value="문서관리">문서관리</button><button class="choice" data-value="보안관리">보안관리</button>
+     </div>
+     <div class="field-title" style="margin-top:25px">데이터 운영 방식</div>
+     <div class="options" id="storage"><button class="choice active" data-value="내 PC 또는 회사 내부 저장">내부 저장 우선</button><button class="choice" data-value="사용자가 직접 선택">직접 선택</button><button class="choice" data-value="클라우드 사용 가능">클라우드 가능</button></div>
+    </div>
+    <div class="result">
+     <h3>나의 소프트웨어 방향</h3><p id="summary">중소기업을 위한 업무관리·고객관리 중심의 독립형 도구를 제안합니다.</p>
+     <ul id="recommend"><li>필요 기능만 선택해 단순하게 구성</li><li>내부 저장 및 백업 정책 검토</li><li>사용자 권한과 데이터 접근 범위 설정</li></ul>
+     <button class="btn btn-blue" id="copy">선택 내용 복사하기</button>
+     <p class="note" id="copymsg" aria-live="polite"></p>
+    </div>
+   </div>
+  </div>
+ </section>
+ <section class="join" id="join">
+  <div class="wrap">
+   <div class="section-tag">06 / JOIN THE MOVEMENT</div><h2>더 나은 소프트웨어를<br>함께 생각합니다.</h2>
+   <p class="lead">중소기업 대표와 실무자, 개인 사용자 여러분의 경험과 의견이 더 실용적인 소프트웨어를 만드는 출발점입니다.</p>
+   <div class="joinbox"><div><strong style="font-size:20px;color:var(--navy)">당신의 업무에서 가장 불편한 점은 무엇인가요?</strong><p>필요한 기능과 개선 아이디어를 알려주세요. 고객의 실제 문제를 바탕으로 제품 방향을 검토하겠습니다.</p></div><a class="btn btn-blue" href="#builder">필요한 기능 설계하기 ↗</a></div>
+   <p class="note">본 페이지는 YULIM INFOTECH의 소프트웨어 사업 방향을 소개하는 아이디어·기획 페이지입니다. 제품별 출시 여부와 기능은 별도 안내합니다.</p>
+  </div>
+ </section>
+</main>
+<footer><div class="wrap foot"><div><strong>YULIM INFOTECH</strong><div>고객의 성공을 함께 만드는 파트너</div></div><div>YULIM PRIVATE OS · Your Data. Your System. Your Control.</div><div>© <span id="year"></span> YULIM INFOTECH. All rights reserved.</div></div></footer>
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+function setupGroup(id,single){const root=document.getElementById(id);root.addEventListener('click',e=>{const b=e.target.closest('button.choice');if(!b)return;if(single){root.querySelectorAll('.choice').forEach(x=>x.classList.remove('active'));b.classList.add('active')}else b.classList.toggle('active');update()})}
+setupGroup('audience',true);setupGroup('storage',true);setupGroup('features',false);
+function selected(id){return [...document.querySelectorAll('#'+id+' .choice.active')].map(x=>x.dataset.value)}
+function update(){const a=selected('audience')[0],f=selected('features'),s=selected('storage')[0];document.getElementById('summary').textContent=(a||'사용자')+'를 위한 '+(f.length?f.join('·'):'선택 기능')+' 중심의 소프트웨어를 제안합니다. 데이터 방식은 '+s+'입니다.';document.getElementById('recommend').innerHTML=['필요 기능만 선택해 단순하게 구성',s+'에 맞는 저장·백업 정책 검토','사용자 권한과 데이터 접근 범위 설정'].map(x=>'<li>'+x+'</li>').join('')}
+document.getElementById('copy').addEventListener('click',async()=>{const text='YULIM PRIVATE OS 맞춤 설계\\n사용자: '+selected('audience')[0]+'\\n기능: '+(selected('features').join(', ')||'미선택')+'\\n데이터 방식: '+selected('storage')[0];try{await navigator.clipboard.writeText(text);document.getElementById('copymsg').textContent='선택 내용이 복사되었습니다.'}catch(e){document.getElementById('copymsg').textContent=text}});
+</script>
+</body>
+</html>
